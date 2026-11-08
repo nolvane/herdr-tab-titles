@@ -41,10 +41,17 @@ herdr plugin install nolvane/herdr-tab-titles
 herdr plugin action invoke tab-titles.restart
 ```
 
-Herdr builds the plugin while installing it. Update it with
-`herdr plugin update`.
+Herdr builds the plugin while installing it, and starts it by itself with
+every server start from then on. To update it:
 
-Herdr starts the plugin by itself with every server start from then on.
+```sh
+herdr plugin update tab-titles
+herdr plugin action invoke tab-titles.restart
+```
+
+Herdr does not restart a running plugin after an update, so without the
+restart action the old version keeps running until the next Herdr server start.
+
 Recommended in `~/.config/herdr/config.toml`, so new tabs are created without a
 name prompt and get their name from the plugin:
 
@@ -106,7 +113,7 @@ server stops.
 ## Development
 
 ```sh
-sh scripts/check.sh
+./scripts/check.sh
 ```
 
 This runs a secret scan (needs `gitleaks`), `cargo fmt --check`,
