@@ -25,8 +25,8 @@ install it: [README.md](README.md). Why it is built this way:
 ## Checks
 
 ```sh
-sh scripts/check.sh            # default stage: merge
-sh scripts/check.sh --stage quick
+./scripts/check.sh            # default stage: merge
+./scripts/check.sh --stage quick
 ```
 
 Every stage (`quick`, `merge`, `release`) runs the same steps: gitleaks secret
@@ -47,7 +47,7 @@ before it reaches users" below.
 **Version.** It lives in two places that must always match: `version` in
 `herdr-plugin.toml` and `[package] version` in `Cargo.toml`. After changing
 it, run `cargo build --release` once (without `--locked`) so `Cargo.lock`
-picks up the new version, then `sh scripts/check.sh --stage release`, which
+picks up the new version, then `./scripts/check.sh --stage release`, which
 runs with `--locked`. The binary reports its version with
 `./herdr-tab-titles --version` and in the `start v…` line of its log.
 
