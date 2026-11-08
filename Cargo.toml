@@ -1,0 +1,15 @@
+[package]
+name = "herdr-tab-titles"
+version = "0.1.0"
+edition = "2021"
+description = "Herdr plugin that names tabs and panes from their directory, git branch, program and agent topic"
+license = "MIT"
+publish = false
+
+[dependencies]
+serde_json = "1"
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true

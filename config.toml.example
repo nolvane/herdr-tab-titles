@@ -1,0 +1,23 @@
+# Herdr Tab Titles settings. Copy to `$(herdr plugin config-dir tab-titles)/config.toml`
+# and run `herdr plugin action invoke tab-titles.restart`. Every line is optional.
+
+# How often the session is read, in milliseconds (200 to 60000).
+poll_ms = 1000
+
+# Maximum title width in characters, position included (10 to 200).
+max_length = 40
+
+# Put the tab's position (the key that switches to it) in front of the title.
+show_position = true
+
+# Show a git branch that is not main, master, develop or similar.
+show_branch = true
+
+# Maximum branch width (4 to 80).
+branch_max = 16
+
+# Name panes as well as tabs (shown in Herdr's goto panel).
+name_panes = true
+
+# Write every rename to the log.
+debug = false

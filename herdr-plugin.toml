@@ -1,0 +1,37 @@
+# Herdr Tab Titles: names tabs and panes automatically.
+
+id = "tab-titles"
+name = "Tab Titles"
+version = "0.1.0"
+min_herdr_version = "0.9.0"
+description = "Names tabs and panes from directory, git branch, program and agent topic"
+platforms = ["linux", "macos"]
+
+# Builds the binary into the plugin root (needs cargo).
+[[build]]
+command = ["sh", "scripts/build.sh"]
+
+# Starts the background naming loop. The command detaches and returns at once.
+[[startup]]
+command = ["./herdr-tab-titles", "start"]
+
+[[actions]]
+id = "restart"
+title = "Tab Titles: restart"
+description = "Start a fresh instance in place of the running one"
+contexts = ["global"]
+command = ["./herdr-tab-titles", "restart"]
+
+[[actions]]
+id = "stop"
+title = "Tab Titles: stop"
+description = "Stop naming tabs until the next restart"
+contexts = ["global"]
+command = ["./herdr-tab-titles", "stop"]
+
+[[actions]]
+id = "status"
+title = "Tab Titles: status"
+description = "Show whether the naming loop runs"
+contexts = ["global"]
+command = ["./herdr-tab-titles", "status"]
