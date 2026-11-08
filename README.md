@@ -113,7 +113,7 @@ server stops.
 ## Development
 
 ```sh
-sh scripts/check.sh
+./scripts/check.sh
 ```
 
 This runs a secret scan (needs `gitleaks`), `cargo fmt --check`,
