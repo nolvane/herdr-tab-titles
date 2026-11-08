@@ -48,3 +48,13 @@ The repository is public on GitHub with the topic `herdr-plugin`, which is
 how Herdr's marketplace finds plugins, so it installs with
 `herdr plugin install nolvane/herdr-tab-titles`. The checks run locally
 through `scripts/check.sh`; there is no CI workflow.
+
+## 2026-11-08: No test channel; a merge to main ships
+
+Herdr installs plugins from GitHub, and `herdr plugin update` fetches the
+newest commit of the ref recorded at install, which is the default branch for
+a plain install. There is no store and no separate channel to stage a version
+in, so a merge to `main` is what users get at their next update. A release is
+tried beforehand by linking a checkout or installing the release branch with
+`--ref` (see "Releasing" in `CLAUDE.md`), and `main` only takes changes whose
+checks passed.
